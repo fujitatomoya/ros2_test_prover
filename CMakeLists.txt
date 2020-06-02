@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.5.1)
 project (ros2_test_prover)
 
 set(VERSION_MAJOR 0)
-set(VERSION_MINOR 1)
+set(VERSION_MINOR 2)
 set(VERSION_PATCH 0)
 
 # Set a default build type if none was specified
@@ -26,15 +26,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
-# Create an executable
-add_executable(rclcpp_1121_repro src/rclcpp_1121_repro.cpp)
-
-function (target_cpp_options)
-    target_compile_options(rclcpp_1121_repro PRIVATE ${ARGV})
-    target_link_options(rclcpp_1121_repro PRIVATE ${ARGV})
-endfunction ()
-
-# ROS2
+# find dependent packages
 set (CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "$ENV{AMENT_PREFIX_PATH}")
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
@@ -44,15 +36,21 @@ find_package(rmw REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
 
-ament_target_dependencies(rclcpp_1121_repro rclcpp std_srvs)
+function(custom_executable target)
+  add_executable(${target} src/${target}.cpp)
+  ament_target_dependencies(${target}
+    "rclcpp"
+    "std_srvs")
+  target_compile_options(${target}
+    PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
+  target_link_options(${target}
+    PRIVATE "-pthread")
+  install(TARGETS ${target}
+  DESTINATION lib/${PROJECT_NAME})
+endfunction()
 
-target_compile_options(
-    rclcpp_1121_repro
-    PRIVATE
-    "-Wall" "-Wextra" "-Werror" "-Wpedantic"
-)
-
-target_cpp_options("-pthread")
+# Create an executable
+custom_executable(rclcpp_1121_repro)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
@@ -65,12 +63,8 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     message(ERROR "GCC 7 or above required for TSan to work correctly in Debug builds. TSan hasn't been enabled.")
 else ()
     # Enable TSan
-    target_cpp_options("-fsanitize=thread")
+    target_compile_options(rclcpp_1121_repro PRIVATE "-fsanitize=thread")
+    target_link_options(rclcpp_1121_repro PRIVATE "-fsanitize=thread")
 endif ()
-
-install(TARGETS
-  rclcpp_1121_repro
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 ament_package()
