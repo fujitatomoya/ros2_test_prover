@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.5.1)
 project (ros2_test_prover)
 
 set(VERSION_MAJOR 0)
-set(VERSION_MINOR 2)
+set(VERSION_MINOR 3)
 set(VERSION_PATCH 0)
 
 # Set a default build type if none was specified
@@ -52,6 +52,8 @@ endfunction()
 # Create an executable
 custom_executable(rclcpp_1121)
 custom_executable(rclcpp_1148)
+custom_executable(ros2_946_pub)
+custom_executable(ros2_946_sub)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
