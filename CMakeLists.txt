@@ -35,12 +35,14 @@ find_package(rcutils)
 find_package(rmw REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(example_interfaces REQUIRED)
 
 function(custom_executable target)
   add_executable(${target} src/${target}.cpp)
   ament_target_dependencies(${target}
     "rclcpp"
-    "std_srvs")
+    "std_srvs"
+    "example_interfaces")
   target_compile_options(${target}
     PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
   target_link_options(${target}
@@ -54,6 +56,7 @@ custom_executable(rclcpp_1121)
 custom_executable(rclcpp_1148)
 custom_executable(ros2_946_pub)
 custom_executable(ros2_946_sub)
+custom_executable(ros2_644)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
