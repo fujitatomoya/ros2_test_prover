@@ -53,11 +53,11 @@ public:
         rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedFutureWithRequest;
         //rclcpp::Client<example_interfaces::srv::AddTwoInts>::SharedFuture;
       auto response_received_callback = [this](ServiceResponseFuture future) {
-        (void) future;
-        printf("Callback: Getting logger\n");
+        auto result = future.get();
+        printf("Callback: Getting logger (result = %ld)\n", result.second->sum);
         rclcpp::Logger logger = this->get_logger();
-        printf("Callback: Using logger\n");
-        RCLCPP_INFO(logger, "Result received!");
+        printf("Callback: Using logger (result = %ld)\n", result.second->sum);
+        //RCLCPP_INFO(logger, "Result received! (result = %ld)", result.second->sum);
         printf("Callback: Shutting down\n");
         rclcpp::shutdown();
       };
