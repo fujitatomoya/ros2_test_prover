@@ -57,7 +57,7 @@ public:
         printf("Callback: Getting logger (result = %ld)\n", result.second->sum);
         rclcpp::Logger logger = this->get_logger();
         printf("Callback: Using logger (result = %ld)\n", result.second->sum);
-        //RCLCPP_INFO(logger, "Result received! (result = %ld)", result.second->sum);
+        RCLCPP_INFO(logger, "Result received! (result = %ld)", result.second->sum);
         printf("Callback: Shutting down\n");
         rclcpp::shutdown();
       };
