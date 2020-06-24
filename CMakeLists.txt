@@ -52,11 +52,12 @@ function(custom_executable target)
 endfunction()
 
 # Create an executable
-custom_executable(rclcpp_1121)
-custom_executable(rclcpp_1148)
-custom_executable(ros2_946_pub)
-custom_executable(ros2_946_sub)
-custom_executable(ros2_644)
+#custom_executable(rclcpp_1121)
+#custom_executable(rclcpp_1148)
+custom_executable(rclcpp_1175)
+#custom_executable(ros2_946_pub)
+#custom_executable(ros2_946_sub)
+#custom_executable(ros2_644)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
@@ -69,8 +70,8 @@ elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU" AND
     message(ERROR "GCC 7 or above required for TSan to work correctly in Debug builds. TSan hasn't been enabled.")
 else ()
     # Enable TSan
-    target_compile_options(rclcpp_1121 PRIVATE "-fsanitize=thread")
-    target_link_options(rclcpp_1121 PRIVATE "-fsanitize=thread")
+    #target_compile_options(rclcpp_1121 PRIVATE "-fsanitize=thread")
+    #target_link_options(rclcpp_1121 PRIVATE "-fsanitize=thread")
 endif ()
 
 ament_package()
