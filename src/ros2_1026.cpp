@@ -7,15 +7,15 @@ public:
     Node("CheckTimerNode", options)
     {
       m_clock = std::make_shared< rclcpp::Clock >(RCL_SYSTEM_TIME);
-      m_lastTime1 = m_clock->now().seconds();
-      m_timer1 = this->create_wall_timer(
-        std::chrono::milliseconds(1000),
-        std::bind(&CheckTimerNode::timer1Callback, this));
-
       m_lastTime2 = m_clock->now().seconds();
       m_timer2 =this->create_wall_timer(
-        std::chrono::milliseconds(200),
+        std::chrono::milliseconds(20),
         std::bind(&CheckTimerNode::timer2Callback, this));
+
+      m_lastTime1 = m_clock->now().seconds();
+      m_timer1 = this->create_wall_timer(
+        std::chrono::milliseconds(100),
+        std::bind(&CheckTimerNode::timer1Callback, this));
     }
 private:
   void timer1Callback()
@@ -23,7 +23,7 @@ private:
       const auto newTime = m_clock->now().seconds();
       RCLCPP_WARN(this->get_logger(), "Timer 1 interval %f s", newTime - m_lastTime1);
       m_lastTime1 = newTime;
-      std::this_thread::sleep_for(std::chrono::milliseconds(400));
+      std::this_thread::sleep_for(std::chrono::milliseconds(40));
     }
 
   void timer2Callback()
