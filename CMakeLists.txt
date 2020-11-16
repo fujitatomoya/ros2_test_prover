@@ -62,6 +62,7 @@ endfunction()
 #custom_executable(ros2_1026)
 custom_executable(rclcpp_1431)
 custom_executable(rclcpp_1454)
+custom_executable(rclcpp_1455)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
