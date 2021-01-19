@@ -32,7 +32,7 @@ private:
     auto message = std_msgs::msg::String();
     std::string tmp(LEN_SET, 'a');
     message.data = tmp;
-    RCLCPP_INFO(this->get_logger(), "Publishing data...'", message.data.c_str());
+    RCLCPP_INFO(this->get_logger(), "Publishing data...'");
     publisher_->publish(message);
     static int64_t old = 0;
     auto tt = std::chrono::high_resolution_clock::now().time_since_epoch().count();
