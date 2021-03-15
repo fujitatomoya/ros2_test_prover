@@ -65,7 +65,8 @@ custom_executable(rclcpp_1454)
 #custom_executable(rclcpp_1455)
 #custom_executable(rclcpp_1487)
 custom_executable(rclcpp_1566)
-custom_executable(rclcpp_1580)
+#custom_executable(rclcpp_1580)
+custom_executable(ros2cli_601)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
