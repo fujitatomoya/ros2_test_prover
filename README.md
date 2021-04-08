@@ -7,6 +7,6 @@ test sample to reproduce and investigate issues, easy to distribute.
 
 [rclcpp](https://github.com/ros2/rclcpp) related issue and reproducible tests.
 
-### prover_rclpy
+## prover_rclpy
 
 [rclpy](https://github.com/ros2/rclpy) related issue and reproducible tests.
