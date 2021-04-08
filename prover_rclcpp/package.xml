@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format2.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="2">
-  <name>ros2_test_prover</name>
-  <version>0.1.0</version>
+  <name>prover_rclcpp</name>
+  <version>0.2.0</version>
   <description>
-    test sample to reproduce and investigate issues, easy to distribute.
+    rclcpp test sample to reproduce and investigate issues, easy to distribute.
   </description>
   <maintainer email="Tomoya.Fujita@sony.com">Tomoya Fujita</maintainer>
   <license>Apache License 2.0</license>
+  <author>Tomoya Fujita</author>
+  <author email="Tomoya.Fujita@sony.com">Tomoya Fujita</author>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
