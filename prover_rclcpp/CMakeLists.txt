@@ -68,6 +68,7 @@ custom_executable(rclcpp_1585)
 custom_executable(rclcpp_1611_client)
 custom_executable(rclcpp_1611_publisher)
 custom_executable(rclcpp_1611_server)
+custom_executable(rclcpp_1638)
 
 #custom_executable(ros2_644)
 #custom_executable(ros2_946_pub)
