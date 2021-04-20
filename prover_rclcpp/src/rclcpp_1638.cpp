@@ -2,10 +2,15 @@
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  auto node = std::make_shared<rclcpp::Node>("foo");
+  // [original] auto node = std::make_shared<rclcpp::Node>("foo");
+  // [no problem] auto executor = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
+  // [no problem] executor->add_node(node);
+
   while(rclcpp::ok())
   {
-    rclcpp::spin_some(node);
+    // [no problem] executor->spin();
+    // [original] rclcpp::spin_some(node);
+    auto executor = std::make_shared<rclcpp::executors::SingleThreadedExecutor>();
   }
 
   rclcpp::shutdown();
