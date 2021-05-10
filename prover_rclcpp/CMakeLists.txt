@@ -78,6 +78,8 @@ custom_executable(rclcpp_1656)
 
 custom_executable(ros2cli_601)
 
+custom_executable(sim_clock_publisher)
+
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
     # See https://bugs.llvm.org/show_bug.cgi?id=24155
