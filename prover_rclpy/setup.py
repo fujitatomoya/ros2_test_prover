@@ -35,6 +35,7 @@ setup(
             'talker = src.talker:main',
             'listener = src.listener:main',
             'rclpy_760 = src.rclpy_760:main',
+            'rclpy_792 = src.rclpy_792:main',
         ],
     },
 )
