@@ -29,8 +29,10 @@ endif()
 # find dependent packages
 set (CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "$ENV{AMENT_PREFIX_PATH}")
 find_package(ament_cmake REQUIRED)
+find_package(lifecycle_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclcpp_components REQUIRED)
+find_package(rclcpp_lifecycle REQUIRED)
 find_package(rcutils)
 find_package(rmw REQUIRED)
 find_package(std_srvs REQUIRED)
@@ -42,6 +44,9 @@ function(custom_executable target)
   ament_target_dependencies(${target}
     "rclcpp"
     "std_srvs"
+    "std_msgs"
+    "lifecycle_msgs"
+    "rclcpp_lifecycle"
     "example_interfaces")
   target_compile_options(${target}
     PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
@@ -71,7 +76,8 @@ custom_executable(rclcpp_1611_server)
 #custom_executable(rclcpp_1638)
 custom_executable(rclcpp_1656)
 custom_executable(rclcpp_1691)
-custom_executable(rclcpp_1743)
+#custom_executable(rclcpp_1743)
+custom_executable(rclcpp_1746)
 
 #custom_executable(ros2_644)
 #custom_executable(ros2_946_pub)
