@@ -80,6 +80,7 @@ custom_executable(rclcpp_1691)
 custom_executable(rclcpp_1746)
 
 custom_executable(rmw_fastrtps_554)
+custom_executable(rmw_fastrtps_555)
 
 #custom_executable(ros2_644)
 #custom_executable(ros2_946_pub)
