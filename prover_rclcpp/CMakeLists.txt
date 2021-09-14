@@ -78,6 +78,7 @@ custom_executable(rclcpp_1611_server)
 custom_executable(rclcpp_1691)
 #custom_executable(rclcpp_1743)
 custom_executable(rclcpp_1746)
+custom_executable(rclcpp_1766)
 
 custom_executable(rmw_fastrtps_554)
 custom_executable(rmw_fastrtps_555)
