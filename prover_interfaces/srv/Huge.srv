@@ -1,0 +1,3 @@
+byte[1048576] input_tensor
+---
+byte[1048576] output_tensor
