@@ -36,6 +36,7 @@ int main(int argc, char * argv[])
 
    // wait
    thread_object_1.join();
+   thread_object_2.join();
 
    rclcpp::shutdown();
 
