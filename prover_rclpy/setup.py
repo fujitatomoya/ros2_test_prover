@@ -40,6 +40,7 @@ setup(
             'rclpy_client_822 = src.rclpy_client_822:main',
             'rclpy_server_822 = src.rclpy_server_822:main',
             'rclpy_827 = src.rclpy_827:main',
+            'ros2_1173 = src.ros2_1173:main',
         ],
     },
 )

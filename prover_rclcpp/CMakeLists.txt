@@ -90,6 +90,7 @@ custom_executable(rmw_fastrtps_555)
 #custom_executable(ros2_946_pub)
 #custom_executable(ros2_946_sub)
 #custom_executable(ros2_1026)
+custom_executable(ros2_1173)
 
 #custom_executable(ros2cli_601)
 
