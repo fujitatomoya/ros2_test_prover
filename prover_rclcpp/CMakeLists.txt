@@ -37,6 +37,7 @@ find_package(rcutils)
 find_package(rmw REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(prover_interfaces REQUIRED)
 find_package(example_interfaces REQUIRED)
 
 function(custom_executable target)
@@ -45,6 +46,7 @@ function(custom_executable target)
     "rclcpp"
     "std_srvs"
     "std_msgs"
+    "prover_interfaces"
     "lifecycle_msgs"
     "rclcpp_lifecycle"
     "example_interfaces")
@@ -82,6 +84,7 @@ custom_executable(rclcpp_1746)
 custom_executable(rclcpp_1766)
 custom_executable(rclcpp_1778)
 custom_executable(rclcpp_1785)
+custom_executable(rclcpp_1827)
 
 custom_executable(rmw_fastrtps_554)
 custom_executable(rmw_fastrtps_555)

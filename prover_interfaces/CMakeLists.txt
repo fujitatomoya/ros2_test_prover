@@ -12,10 +12,14 @@ find_package(rosidl_default_generators REQUIRED)
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
+set(msg_files
+  "msg/StringLengthTest.msg"
+)
 set(srv_files
   "srv/Huge.srv"
 )
 rosidl_generate_interfaces(${PROJECT_NAME}
+  ${msg_files}
   ${srv_files}
   ADD_LINTER_TESTS
 )

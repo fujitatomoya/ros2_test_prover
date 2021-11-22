@@ -1,0 +1,1 @@
+string<=10 size_limited_string
