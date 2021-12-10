@@ -14,6 +14,7 @@ find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
   "msg/StringLengthTest.msg"
+  "msg/Property.msg"
 )
 set(srv_files
   "srv/Huge.srv"
