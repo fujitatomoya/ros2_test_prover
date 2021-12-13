@@ -85,7 +85,6 @@ custom_executable(rclcpp_1766)
 custom_executable(rclcpp_1778)
 custom_executable(rclcpp_1785)
 custom_executable(rclcpp_1827)
-custom_executable(rclcpp_temp)
 
 custom_executable(rmw_fastrtps_554)
 custom_executable(rmw_fastrtps_555)
@@ -97,6 +96,7 @@ custom_executable(rmw_fastrtps_555)
 custom_executable(ros2_1173)
 
 #custom_executable(ros2cli_601)
+custom_executable(ros2cli_679)
 
 custom_executable(sim_clock_publisher)
 

@@ -22,6 +22,7 @@ class TestPublisher : public rclcpp::Node
     {
       auto message = prover_interfaces::msg::Property();
       message.property = "This is property";
+      message.anything = "This is anything";
       publisher_->publish(message);
     }
     rclcpp::TimerBase::SharedPtr timer_;
