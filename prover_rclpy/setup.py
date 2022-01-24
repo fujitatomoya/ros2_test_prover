@@ -42,6 +42,7 @@ setup(
             'rclpy_827 = src.rclpy_827:main',
             'rclpy_857 = src.rclpy_857:main',
             'rclpy_879 = src.rclpy_879:main',
+            'rclpy_881 = src.rclpy_881:main',
             'ros2_1173 = src.ros2_1173:main',
         ],
     },
