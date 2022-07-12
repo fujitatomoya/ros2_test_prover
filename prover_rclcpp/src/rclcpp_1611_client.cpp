@@ -34,7 +34,7 @@ public:
     // Create service client and link it to callback group
     srv_client_ = this->create_client<std_srvs::srv::Trigger>(
           "trigger_srv",
-          rmw_qos_profile_services_default,
+          rclcpp::ServicesQoS(),
           callback_group_
           );
   }

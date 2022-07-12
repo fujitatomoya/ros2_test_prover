@@ -46,15 +46,9 @@ int main(int argc, char ** argv)
   service_node = rclcpp::Node::make_shared("service", node_options);
   client_node = rclcpp::Node::make_shared("client", node_options);
 
-  // Client/Service options
-  rmw_qos_profile_t qos_profile = rmw_qos_profile_services_default;
-  qos_profile.history = RMW_QOS_POLICY_HISTORY_KEEP_LAST;
-  std::cout << "Setting OoS depth = 1 for client and service" << std::endl;
-  qos_profile.depth = 1;
-
   // Create client and service with options
-  auto client = client_node->create_client<AddTwoInts>("add_two_ints", qos_profile);
-  auto server = service_node->create_service<AddTwoInts>("add_two_ints", handle_service, qos_profile);
+  auto client = client_node->create_client<AddTwoInts>("add_two_ints", rclcpp::ServicesQoS());
+  auto server = service_node->create_service<AddTwoInts>("add_two_ints", handle_service, rclcpp::ServicesQoS());
 
   // Create separate executors for client and service nodes to better show the issue
   auto service_executor = std::make_shared<Executor>();
