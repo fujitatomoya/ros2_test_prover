@@ -106,6 +106,7 @@ custom_executable(ros2_1173)
 custom_executable(ros2cli_679)
 
 custom_executable(sim_clock_publisher)
+custom_executable(intraprocess_pub_sub)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
