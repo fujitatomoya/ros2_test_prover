@@ -54,6 +54,8 @@ setup(
             'rclpy_1000_sub = src.rclpy_1000_sub:main',
             'rclpy_1016_service = src.rclpy_1016_service:main',
             'rclpy_1016_client = src.rclpy_1016_client:main',
+            'rclpy_1018_server = src.rclpy_1018_server:main',
+            'rclpy_1018_client = src.rclpy_1018_client:main',
             'rclpy_doctor_940 = src.rclpy_doctor_940:main',
             'rclpy_foo_940 = src.rclpy_foo_940:main',
             'rclpy_bar_940 = src.rclpy_bar_940:main',
