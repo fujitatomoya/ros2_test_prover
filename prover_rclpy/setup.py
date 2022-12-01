@@ -63,6 +63,7 @@ setup(
             'rclpy_1030 = src.rclpy_1030:main',
             'rclpy_1034 = src.rclpy_1034:main',
             'rclpy_1039 = src.rclpy_1039:main',
+            'rclpy_1047 = src.rclpy_1047:main',
         ],
     },
 )
