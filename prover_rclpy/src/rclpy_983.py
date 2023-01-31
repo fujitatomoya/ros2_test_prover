@@ -26,7 +26,7 @@ def multi_executor():
     test_node = TestNode()
 
     # Moved to multi threaded executor so none of Actions block publishing of msgs
-    executor = MultiThreadedExecutor(num_threads=1)
+    executor = MultiThreadedExecutor(num_threads=2)
     executor.add_node(test_node)
 
     while rclpy.ok() is True:
