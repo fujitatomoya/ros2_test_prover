@@ -93,6 +93,7 @@ custom_executable(rclcpp_1953)
 custom_executable(rclcpp_1968)
 custom_executable(rclcpp_2053)
 custom_executable(rclcpp_2062)
+custom_executable(rclcpp_2138)
 custom_executable(rclpy_881)
 
 custom_executable(rmw_fastrtps_554)
