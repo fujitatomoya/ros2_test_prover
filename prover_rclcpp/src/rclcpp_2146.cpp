@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
     rclcpp::spin_some(n);
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
+  RCLCPP_INFO(n->get_logger(), "Shutting down rclcpp...");
   rclcpp::shutdown(); // cyclonedds, we can still see the publisher endpoint here.
   turnOffPubThread.join();
   return 0;
