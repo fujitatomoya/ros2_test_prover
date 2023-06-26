@@ -15,6 +15,7 @@
 
   <build_depend>lifecycle_msgs</build_depend>
   <build_depend>rclcpp</build_depend>
+  <build_depend>rclcpp_action</build_depend>
   <build_depend>rclcpp_components</build_depend>
   <build_depend>rclcpp_lifecycle</build_depend>
   <build_depend>rcutils</build_depend>
@@ -24,9 +25,11 @@
   <build_depend>std_srvs</build_depend>
   <build_depend>prover_interfaces</build_depend>
   <build_depend>example_interfaces</build_depend>
+  <build_depend>action_tutorials_interfaces</build_depend>
 
   <exec_depend>lifecycle_msgs</exec_depend>
   <exec_depend>rclcpp</exec_depend>
+  <exec_depend>rclcpp_action</exec_depend>
   <exec_depend>rclcpp_components</exec_depend>
   <exec_depend>rclcpp_lifecycle</exec_depend>
   <exec_depend>rcutils</exec_depend>
@@ -35,6 +38,7 @@
   <exec_depend>std_srvs</exec_depend>
   <exec_depend>prover_interfaces</exec_depend>
   <exec_depend>example_interfaces</exec_depend>
+  <exec_depend>action_tutorials_interfaces</exec_depend>
 
   <test_depend>ament_cmake_pytest</test_depend>
   <test_depend>ament_lint_auto</test_depend>

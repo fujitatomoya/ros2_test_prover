@@ -32,6 +32,7 @@ set (CMAKE_PREFIX_PATH ${CMAKE_PREFIX_PATH} "$ENV{AMENT_PREFIX_PATH}")
 find_package(ament_cmake REQUIRED)
 find_package(lifecycle_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(rclcpp_action REQUIRED)
 find_package(rclcpp_components REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(rcutils)
@@ -40,17 +41,20 @@ find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(prover_interfaces REQUIRED)
 find_package(example_interfaces REQUIRED)
+find_package(action_tutorials_interfaces REQUIRED)
 
 function(custom_executable target)
   add_executable(${target} src/${target}.cpp)
   ament_target_dependencies(${target}
     "rclcpp"
+    "rclcpp_action"
     "std_srvs"
     "std_msgs"
     "prover_interfaces"
     "lifecycle_msgs"
     "rclcpp_lifecycle"
-    "example_interfaces")
+    "example_interfaces"
+    "action_tutorials_interfaces")
   target_compile_options(${target}
     PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
   target_link_options(${target}
@@ -98,6 +102,7 @@ custom_executable(rclcpp_2138)
 custom_executable(rclcpp_2144)
 custom_executable(rclcpp_2146)
 custom_executable(rclcpp_2166)
+custom_executable(rclcpp_2226)
 custom_executable(rclpy_881)
 
 custom_executable(rmw_fastrtps_554)
