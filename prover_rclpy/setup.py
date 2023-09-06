@@ -68,6 +68,7 @@ setup(
             'rclpy_1098 = src.rclpy_1098:main',
             'rclpy_1132 = src.rclpy_1132:main',
             'rclpy_1149 = src.rclpy_1149:main',
+            'rclpy_1159 = src.rclpy_1159:main',
             'ros2cli_818 = src.ros2cli_818:main',
         ],
     },
