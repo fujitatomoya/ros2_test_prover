@@ -42,6 +42,7 @@ find_package(std_msgs REQUIRED)
 find_package(prover_interfaces REQUIRED)
 find_package(example_interfaces REQUIRED)
 find_package(action_tutorials_interfaces REQUIRED)
+find_package(action_tutorials_cpp REQUIRED)
 
 function(custom_executable target)
   add_executable(${target} src/${target}.cpp)
@@ -54,7 +55,8 @@ function(custom_executable target)
     "lifecycle_msgs"
     "rclcpp_lifecycle"
     "example_interfaces"
-    "action_tutorials_interfaces")
+    "action_tutorials_interfaces"
+    "action_tutorials_cpp")
   target_compile_options(${target}
     PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
   target_link_options(${target}
@@ -100,6 +102,7 @@ custom_executable(rclcpp_1953)
 custom_executable(rclcpp_1968)
 custom_executable(rclcpp_2053)
 custom_executable(rclcpp_2062)
+custom_executable(rclcpp_2101_server)
 custom_executable(rclcpp_2138)
 custom_executable(rclcpp_2144)
 custom_executable(rclcpp_2146)
