@@ -67,6 +67,9 @@ endfunction()
 
 # Create an executable
 
+custom_executable(examples_368_pub)
+custom_executable(examples_368_sub)
+
 custom_executable(rcl_1089)
 custom_executable(rclcpp_731)
 #custom_executable(rclcpp_1121)
