@@ -75,6 +75,7 @@ setup(
             'rclpy_1199 = src.rclpy_1199:main',
             'ros2cli_818 = src.ros2cli_818:main',
             'ros2cli_862 = src.ros2cli_862:main',
+            'rosbag2_1549 = src.rosbag2_1549:main',
         ],
     },
 )
