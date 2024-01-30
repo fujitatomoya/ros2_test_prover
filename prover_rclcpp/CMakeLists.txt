@@ -113,6 +113,8 @@ custom_executable(rclcpp_2166)
 custom_executable(rclcpp_2196)
 custom_executable(rclcpp_2226)
 custom_executable(rclcpp_2379)
+custom_executable(rclcpp_2417_pub)
+custom_executable(rclcpp_2417_sub)
 
 custom_executable(rclpy_881)
 
