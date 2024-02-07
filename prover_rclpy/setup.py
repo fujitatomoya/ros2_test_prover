@@ -61,6 +61,7 @@ setup(
             'rclpy_foo_940 = src.rclpy_foo_940:main',
             'rclpy_bar_940 = src.rclpy_bar_940:main',
             'ros2_1173 = src.ros2_1173:main',
+            'ros2_1517 = src.ros2_1517:main',
             'rclpy_1030 = src.rclpy_1030:main',
             'rclpy_1034 = src.rclpy_1034:main',
             'rclpy_1039 = src.rclpy_1039:main',
