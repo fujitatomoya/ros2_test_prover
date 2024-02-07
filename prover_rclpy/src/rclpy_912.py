@@ -20,7 +20,10 @@ def main():
     rclpy.init()
     node = rclpy.node.Node("rclpy_912")
 
-    node.declare_parameter("str_list", [""],
+    node.declare_parameter(
+        #"str_list", [""], # this works as string array
+        "str_list", [], # this deduced as byte array always
+        #name = "str_list", # if default is not provided, rclpy applies the descriptor info
         ParameterDescriptor(
             type=ParameterType.PARAMETER_STRING_ARRAY,
             description="optionally some strings",
