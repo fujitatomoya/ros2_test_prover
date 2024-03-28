@@ -21,6 +21,7 @@
   <build_depend>rcutils</build_depend>
   <build_depend>rmw</build_depend>
   <build_depend>rmw_implementation_cmake</build_depend>
+  <build_depend>rosbag2_cpp</build_depend>
   <build_depend>std_msgs</build_depend>
   <build_depend>std_srvs</build_depend>
   <build_depend>prover_interfaces</build_depend>
@@ -35,6 +36,7 @@
   <exec_depend>rclcpp_lifecycle</exec_depend>
   <exec_depend>rcutils</exec_depend>
   <exec_depend>rmw</exec_depend>
+  <exec_depend>rosbag2_cpp</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <exec_depend>std_srvs</exec_depend>
   <exec_depend>prover_interfaces</exec_depend>

@@ -37,6 +37,7 @@ find_package(rclcpp_components REQUIRED)
 find_package(rclcpp_lifecycle REQUIRED)
 find_package(rcutils)
 find_package(rmw REQUIRED)
+find_package(rosbag2_cpp REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(prover_interfaces REQUIRED)
@@ -88,6 +89,7 @@ function(custom_executable target)
   ament_target_dependencies(${target}
     "rclcpp"
     "rclcpp_action"
+    "rosbag2_cpp"
     "std_srvs"
     "std_msgs"
     "prover_interfaces"
@@ -154,6 +156,8 @@ custom_executable(rclcpp_2226)
 custom_executable(rclcpp_2379)
 custom_executable(rclcpp_2417_pub)
 custom_executable(rclcpp_2417_sub)
+
+custom_executable(rosbag2_1586)
 
 custom_executable(rclpy_881)
 
