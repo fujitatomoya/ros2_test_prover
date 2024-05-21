@@ -16,9 +16,11 @@ set(msg_files
   "msg/StringLengthTest.msg"
   "msg/Property.msg"
   "msg/TestMsg.msg"
+  "msg/SameName.msg"
 )
 set(srv_files
   "srv/Huge.srv"
+  "srv/SameName.srv"
 )
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files}
