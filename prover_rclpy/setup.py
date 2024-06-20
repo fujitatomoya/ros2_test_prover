@@ -74,6 +74,7 @@ setup(
             'rclpy_1163_pub = src.rclpy_1163_pub:main',
             'rclpy_1163_sub = src.rclpy_1163_sub:main',
             'rclpy_1199 = src.rclpy_1199:main',
+            'rclpy_1265 = src.rclpy_1265:main',
             'rclpy_1273 = src.rclpy_1273:main',
             'rclpy_1287 = src.rclpy_1287:main',
             'rclpy_1303 = src.rclpy_1303:main',
