@@ -1,7 +1,11 @@
 from functools import partial
+from rclpy.timer import TimerInfo
+
 import rclpy
 import rclpy.node
 import rclpy.executors
+import rclpy.timer
+
 
 def main(args=None):
     rclpy.init()
@@ -12,9 +16,11 @@ def main(args=None):
 
     try:
         print("----- test 1")
-        # pass
-        def timer_callback(info):
+        # pass, i think correct behavior, info is appended as extra argument.
+        def timer_callback(info: TimerInfo):
             print(info)
+            print(info.expected_call_time)
+            print(info.actual_call_time)
 
         timer = node.create_timer(1, timer_callback)
         executor.spin_once(2)
@@ -25,11 +31,11 @@ def main(args=None):
 
     try:
         print("----- test 2")
-        # pass, but self is going to be TimerInfo
-        def timer_callback(self):
-            print(self)
+        # pass, i think correct behavior
+        def timer_callback(node):
+            print(node)
 
-        timer = node.create_timer(1, timer_callback)
+        timer = node.create_timer(1, partial(timer_callback, node))
         executor.spin_once(2)
         timer.cancel()
         node.destroy_timer(timer)
@@ -38,66 +44,16 @@ def main(args=None):
 
     try:
         print("----- test 3")
-        # pass
-        def timer_callback(info):
-            print(info)
-
-        timer = node.create_timer(1, partial(timer_callback))
-        executor.spin_once(2)
-        timer.cancel()
-        node.destroy_timer(timer)
-    finally:
-        pass
-
-    try:
-        print("----- test 4")
-        # pass
-        def timer_callback(node):
-            print(node)
-
-        timer = node.create_timer(1, partial(timer_callback, node))
-        executor.spin_once(2)
-        timer.cancel()
-        node.destroy_timer(timer)
-    finally:
-        pass
-
-    try:
-        print("----- test 5")
-        # pass
-        def timer_callback(node, executor):
+        # pass, correct behavior
+        def timer_callback(node, executor, info: TimerInfo):
             print(node)
             print(executor)
+            print(info)
+            print(info.expected_call_time)
+            print(info.actual_call_time)
 
         timer = node.create_timer(1, partial(timer_callback, node, executor))
         executor.spin_once(2)
-        node.destroy_timer(timer)
-    finally:
-        pass
-
-    try:
-        print("----- test 6")
-        # pass
-        def timer_callback(node, info):
-            print(info)
-            print(node)
-
-        timer = node.create_timer(1, partial(timer_callback, node))
-        executor.spin_once(2)
-        timer.cancel()
-        node.destroy_timer(timer)
-    finally:
-        pass
-
-    try:
-        print("----- test 7")
-        # pass but node is gonna be TimerInfo
-        def timer_callback(node):
-            print(node)
-
-        timer = node.create_timer(1, partial(timer_callback))
-        executor.spin_once(2)
-        timer.cancel()
         node.destroy_timer(timer)
     finally:
         pass
