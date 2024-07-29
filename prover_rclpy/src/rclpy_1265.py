@@ -58,6 +58,21 @@ def main(args=None):
     finally:
         pass
 
+    try:
+        print("----- test 4")
+        # pass, i think correct behavior, info is appended as extra argument.
+        def timer_callback(foobar: TimerInfo):
+            print(foobar)
+            print(foobar.expected_call_time)
+            print(foobar.actual_call_time)
+
+        timer = node.create_timer(1, timer_callback)
+        executor.spin_once(2)
+        timer.cancel()
+        node.destroy_timer(timer)
+    finally:
+        pass
+
     executor.shutdown()
     node.destroy_node()
     rclpy.shutdown()
