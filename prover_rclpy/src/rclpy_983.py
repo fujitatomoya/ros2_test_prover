@@ -9,7 +9,9 @@ class TestNode(Node):
         self.tmr = self.create_timer(1, self.tmr_callback)
 
     def tmr_callback(self):
-        1/0
+        #1/0
+        raise Exception("1")
+        #raise BaseException("2")  # never reach here
         print('Timer callback fired')
 
 
