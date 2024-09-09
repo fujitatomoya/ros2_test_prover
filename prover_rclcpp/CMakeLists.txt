@@ -167,6 +167,7 @@ custom_executable(rmw_fastrtps_554)
 custom_executable(rmw_fastrtps_555)
 custom_executable(rmw_fastrtps_646)
 custom_executable(rmw_fastrtps_728)
+custom_executable(rmw_fastrtps_777)
 
 #custom_executable(ros2_644)
 #custom_executable(ros2_946_pub)
