@@ -6,7 +6,7 @@ from rclpy.action import ActionServer
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.callback_groups import MutuallyExclusiveCallbackGroup
 
-from action_tutorials_interfaces.action import Fibonacci
+from example_interfaces.action import Fibonacci
 from example_interfaces.srv import AddTwoInts
 
 

@@ -1,9 +1,9 @@
-#include "action_tutorials_interfaces/action/fibonacci.hpp"
+#include "example_interfaces/action/fibonacci.hpp"
 
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
-using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
+using Fibonacci = example_interfaces::action::Fibonacci;
 using GoalHandle = rclcpp_action::ServerGoalHandle<Fibonacci>;
 
 class Server final : public rclcpp::Node {
@@ -61,7 +61,7 @@ private:
     rclcpp::Rate loop_rate(1);
     const auto goal = goalHandle->get_goal();
     auto feedback = std::make_shared<Fibonacci::Feedback>();
-    auto & sequence = feedback->partial_sequence;
+    auto & sequence = feedback->sequence;
     sequence.push_back(0);
     sequence.push_back(1);
     auto result = std::make_shared<Fibonacci::Result>();

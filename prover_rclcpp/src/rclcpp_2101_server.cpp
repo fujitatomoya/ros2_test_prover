@@ -2,14 +2,14 @@
 #include <memory>
 #include <thread>
 
-#include "action_tutorials_interfaces/action/fibonacci.hpp"
+#include "example_interfaces/action/fibonacci.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
 
 class FibonacciActionServer : public rclcpp::Node
 {
 public:
-  using Fibonacci = action_tutorials_interfaces::action::Fibonacci;
+  using Fibonacci = example_interfaces::action::Fibonacci;
   using GoalHandleFibonacci = rclcpp_action::ServerGoalHandle<Fibonacci>;
 
   explicit FibonacciActionServer(const rclcpp::NodeOptions & options = rclcpp::NodeOptions())

@@ -42,7 +42,6 @@ find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(prover_interfaces REQUIRED)
 find_package(example_interfaces REQUIRED)
-find_package(action_tutorials_interfaces REQUIRED)
 find_package(action_tutorials_cpp REQUIRED)
 
 set(dependencies
@@ -96,7 +95,6 @@ function(custom_executable target)
     "lifecycle_msgs"
     "rclcpp_lifecycle"
     "example_interfaces"
-    "action_tutorials_interfaces"
     "action_tutorials_cpp")
   target_compile_options(${target}
     PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
