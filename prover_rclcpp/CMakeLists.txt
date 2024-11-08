@@ -157,6 +157,7 @@ custom_executable(rclcpp_2417_sub)
 custom_executable(rclcpp_2497)
 custom_executable(rclcpp_2507)
 #custom_executable(rclcpp_2654)
+custom_executable(rclcpp_2664)
 
 custom_executable(rosbag2_1586)
 

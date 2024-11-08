@@ -14,7 +14,7 @@ def sleep_async(node: Node, time: float) -> Future:
     args:
         node: The node to sleep on. Future will be created with the nodes executor.
         time: The time to sleep in seconds
-
+    
     returns:
         A future that will be done after the given amount of time.
     """
