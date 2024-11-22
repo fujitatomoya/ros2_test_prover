@@ -27,15 +27,8 @@ class TestNode(Node):
         #self.assertEqual(self.get_parameter(USE_SIM_TIME_NAME).value, True)
 
         def timer_callback():
-            self.get_logger().info('Timer expired!')
-            start_time = self.get_clock().now()
-            is_time_out = False
-            while not is_time_out:
-                time_now = self.get_clock().now()
-                spent_time = time_now -start_time
-                self.get_logger().info('Current time: {}'.format(time_now.to_msg()))
-                time.sleep(0.1)
-                is_time_out = True if spent_time.nanoseconds > (10 ** 9) else False
+            time_now = self.get_clock().now()
+            self.get_logger().info('Current time: {}'.format(time_now.to_msg()))
 
         # Set timer to expire in 2 seconds
         timer = self.create_timer(2.0, timer_callback)
