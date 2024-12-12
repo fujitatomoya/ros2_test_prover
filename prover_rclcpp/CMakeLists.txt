@@ -156,6 +156,7 @@ custom_executable(rclcpp_2417_pub)
 custom_executable(rclcpp_2417_sub)
 custom_executable(rclcpp_2497)
 custom_executable(rclcpp_2507)
+custom_executable(rclcpp_2645)
 #custom_executable(rclcpp_2654)
 custom_executable(rclcpp_2664)
 
