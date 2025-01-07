@@ -1,7 +1,6 @@
-import asyncio
-import time
-
 import rclpy
+from rclpy.executors import SingleThreadedExecutor
+from rclpy.executors import MultiThreadedExecutor
 
 
 async def throwing_task():
@@ -20,8 +19,9 @@ async def test_1():
 async def test_2(executor):
     task = executor.create_task(throwing_task)
     try:
+        print("Awaiting task (before)")
         await task
-        print("Awaiting task")
+        print("Awaiting task (after)")
     except FileNotFoundError:
         print("Error but should keep going")
     return True
@@ -31,18 +31,19 @@ def main(args=None):
     rclpy.init()
 
     node = rclpy.create_node("test_wait")
-    executor = rclpy.get_global_executor()
+    executor = SingleThreadedExecutor()
+    #executor = MultiThreadedExecutor()
     executor.add_node(node)
     
-    # task1
+    # task1 (this is no problem, exception is caught in user created task)
     task = executor.create_task(test_1)
-    executor.spin_until_future_complete(task)
+    executor.spin_until_future_complete(task, timeout_sec=3.0)
     assert task.result()
 
-    #task2
+    # task2
     task = executor.create_task(test_2, executor)
-    executor.spin_until_future_complete(task)
-    assert task.result()
+    executor.spin_until_future_complete(task, timeout_sec=3.0)
+    assert not task.result()
 
     rclpy.shutdown()
 
