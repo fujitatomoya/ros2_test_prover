@@ -88,6 +88,7 @@ setup(
             'ros2cli_862 = src.ros2cli_862:main',
             'ros2cli_885 = src.ros2cli_885:main',
             'ros2cli_936 = src.ros2cli_936:main',
+            'ros2cli_960 = src.ros2cli_960:main',
             'rosbag2_1549 = src.rosbag2_1549:main',
             'ros2_doc_4132 = src.ros2_doc_4132:main',
         ],
