@@ -185,6 +185,7 @@ custom_executable(ros2cli_834)
 custom_executable(sim_clock_publisher)
 custom_executable(intraprocess_pub_sub)
 custom_executable(rclcpp_logger_test)
+custom_executable(rcl_logging_performance)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
