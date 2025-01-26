@@ -1,6 +1,10 @@
+#include <chrono>
+
 #include <rclcpp/node.hpp>
 #include <rclcpp/executors.hpp>
 #include <std_msgs/msg/string.hpp>
+
+using namespace std::chrono_literals;
 
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
@@ -31,7 +35,8 @@ int main(int argc, char *argv[]) {
 
   while (rclcpp::ok()) {
     std::cout << "Running spin_some" << std::endl;
-    rclcpp::spin_some(sub_node);
+    //rclcpp::spin_some(sub_node);
+    rclcpp::spin_all(sub_node, 0s);
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 
