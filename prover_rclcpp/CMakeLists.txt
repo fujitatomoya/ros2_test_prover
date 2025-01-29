@@ -183,6 +183,7 @@ custom_executable(ros2_1517_rclcpp)
 #custom_executable(ros2cli_601)
 custom_executable(ros2cli_679)
 custom_executable(ros2cli_834)
+custom_executable(ros2cli_965)
 
 custom_executable(sim_clock_publisher)
 custom_executable(intraprocess_pub_sub)
