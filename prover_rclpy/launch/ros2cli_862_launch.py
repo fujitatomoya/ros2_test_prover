@@ -10,7 +10,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'param',
-            default_value=TextSubstitution(text='abc'),
+            default_value=TextSubstitution(text='123E5'), # this already breaks the code
             description='String param'
         ),
         Node(
