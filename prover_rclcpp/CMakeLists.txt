@@ -189,6 +189,7 @@ custom_executable(sim_clock_publisher)
 custom_executable(intraprocess_pub_sub)
 custom_executable(rclcpp_logger_test)
 custom_executable(rcl_logging_performance)
+custom_executable(create_sub_via_param)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" AND
     "${CMAKE_CXX_COMPILER_VERSION}" VERSION_LESS 6.0)
