@@ -180,6 +180,7 @@ custom_executable(rmw_fastrtps_777)
 custom_executable(ros2_1173)
 custom_executable(ros2_1400)
 custom_executable(ros2_1517_rclcpp)
+custom_executable(ros2_1678)
 
 #custom_executable(ros2cli_601)
 custom_executable(ros2cli_679)
