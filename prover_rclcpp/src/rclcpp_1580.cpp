@@ -30,8 +30,10 @@ int main(int argc, char * argv[])
 
   auto node = std::make_shared<MinimalSubscriber>();
 
+  rclcpp::executors::SingleThreadedExecutor executor;
+  executor.add_node(node);
   while (rclcpp::ok()) {
-    rclcpp::spin_some(node);
+    executor.spin_some();
     rate.sleep();
   }
 

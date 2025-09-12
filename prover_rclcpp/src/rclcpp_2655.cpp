@@ -33,10 +33,11 @@ int main(int argc, char *argv[]) {
         std::cout << "Received(sub2): " << msg->data << std::endl;
       });
 
+  auto executor = rclcpp::executors::SingleThreadedExecutor();
+  executor.add_node(sub_node);
   while (rclcpp::ok()) {
     std::cout << "Running spin_some" << std::endl;
-    //rclcpp::spin_some(sub_node);
-    rclcpp::spin_all(sub_node, 0s);
+    executor.spin_some();
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
 

@@ -83,6 +83,8 @@ int main(int argc, char* argv[])
 
     rclcpp::WallRate loop_rate(500ms);
 
+    auto executor = rclcpp::executors::SingleThreadedExecutor();
+    executor.add_node(node);
     while (rclcpp::ok())
     {
         try
@@ -92,7 +94,7 @@ int main(int argc, char* argv[])
                 ptr->run();
             }
 
-            rclcpp::spin_some(node);
+            executor.spin_some();
         }
         catch (const rclcpp::exceptions::RCLError& e)
         {

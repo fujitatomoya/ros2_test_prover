@@ -20,9 +20,11 @@ int main(int argc, char** argv)
         std::cout << "timestamp: " << timestamp << std::endl;
       }
     );
+    auto executor = rclcpp::executors::SingleThreadedExecutor();
+    executor.add_node(node);
     while (rclcpp::ok())
     {
-        rclcpp::spin_some(node);
+        executor.spin_some();
         RCLCPP_INFO(node->get_logger(), "spin_some completed, next loop...");
         loop_rate.sleep();
     }

@@ -13,10 +13,13 @@ int main(int argc, char *argv[]) {
     pub.reset(); // fastrtps and connextdds clears publisher endpoint from the network.
   });
 
+  auto executor = rclcpp::executors::SingleThreadedExecutor();
+  executor.add_node(n);
+
   auto counter = 0;
   while (counter < 10) {
     counter++;
-    rclcpp::spin_some(n);
+    executor.spin_some();
     std::this_thread::sleep_for(std::chrono::seconds(1));
   }
   RCLCPP_INFO(n->get_logger(), "Shutting down rclcpp...");
