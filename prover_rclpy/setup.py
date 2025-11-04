@@ -85,6 +85,7 @@ setup(
             'rclpy_1303 = src.rclpy_1303:main',
             'rclpy_1351 = src.rclpy_1351:main',
             'rclpy_1445 = src.rclpy_1445:main',
+            'rclpy_1553 = src.rclpy_1533:main',
             'ros2cli_818 = src.ros2cli_818:main',
             'ros2cli_862 = src.ros2cli_862:main',
             'ros2cli_885 = src.ros2cli_885:main',
