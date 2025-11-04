@@ -42,23 +42,22 @@ find_package(std_srvs REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(prover_interfaces REQUIRED)
 find_package(example_interfaces REQUIRED)
-find_package(action_tutorials_cpp REQUIRED)
 
 set(dependencies
-  rclcpp
-  rclcpp_components
-  std_msgs
+  rclcpp::rclcpp
+  rclcpp_components::component
+  ${std_msgs_TARGETS}
 )
 
 add_library(${PROJECT_NAME}_composable_node_publisher SHARED src/composable_node_publisher.cpp)
-ament_target_dependencies(${PROJECT_NAME}_composable_node_publisher ${dependencies})
+target_link_libraries(${PROJECT_NAME}_composable_node_publisher ${dependencies})
 rclcpp_components_register_node(${PROJECT_NAME}_composable_node_publisher
   PLUGIN "${PROJECT_NAME}::ComposableNodePublisher"
   EXECUTABLE composable_node_publisher
 )
 
 add_library(${PROJECT_NAME}_composable_node_subscription SHARED src/composable_node_subscription.cpp)
-ament_target_dependencies(${PROJECT_NAME}_composable_node_subscription ${dependencies})
+target_link_libraries(${PROJECT_NAME}_composable_node_subscription ${dependencies})
 rclcpp_components_register_node(${PROJECT_NAME}_composable_node_subscription
   PLUGIN "${PROJECT_NAME}::ComposableNodeSubscription"
   EXECUTABLE composable_node_subscription
@@ -85,17 +84,16 @@ install(DIRECTORY
 
 function(custom_executable target)
   add_executable(${target} src/${target}.cpp)
-  ament_target_dependencies(${target}
-    "rclcpp"
-    "rclcpp_action"
-    "rosbag2_cpp"
-    "std_srvs"
-    "std_msgs"
-    "prover_interfaces"
-    "lifecycle_msgs"
-    "rclcpp_lifecycle"
-    "example_interfaces"
-    "action_tutorials_cpp")
+  target_link_libraries(${target}
+    rclcpp::rclcpp
+    rclcpp_action::rclcpp_action
+    rosbag2_cpp::rosbag2_cpp
+    ${std_srvs_TARGETS}
+    ${std_msgs_TARGETS}
+    ${prover_interfaces_TARGETS}
+    ${lifecycle_msgs_TARGETS}
+    rclcpp_lifecycle::rclcpp_lifecycle
+    ${example_interfaces_TARGETS})
   target_compile_options(${target}
     PRIVATE "-Wall" "-Wextra" "-Werror" "-Wpedantic" "-pthread")
   target_link_options(${target}
