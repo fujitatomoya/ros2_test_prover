@@ -63,6 +63,8 @@ setup(
             'rclpy_bar_940 = src.rclpy_bar_940:main',
             'ros2_1173 = src.ros2_1173:main',
             'ros2_1517 = src.ros2_1517:main',
+            'ros2_1722_pub = src.ros2_1722_pub:main',
+            'ros2_1722_sub = src.ros2_1722_sub:main',
             'rmw_372_client = src.rmw_372_client:main',
             'rmw_372_server = src.rmw_372_server:main',
             'rclpy_1030 = src.rclpy_1030:main',
